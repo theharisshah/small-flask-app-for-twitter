@@ -20,7 +20,7 @@ app = Flask(__name__)
 def index():
     return render_template('search.html', urlIMG="http://www.schoolchalao.com/app/webroot/img/no-user-image.png")
 
-@app.route("/update", methods=['POST']) #incase u need to post update
+@app.route("/update", methods=['POST']) #incase u need to post tweet 
 def update():
     twat=request.form['updtestat']
     api.update_status(twat)
