@@ -20,7 +20,7 @@ app = Flask(__name__)
 def index():
     return render_template('search.html', urlIMG="http://www.schoolchalao.com/app/webroot/img/no-user-image.png")
 
-@app.route("/update", methods=['POST'])
+@app.route("/update", methods=['POST']) #incase u need to post update
 def update():
     twat=request.form['updtestat']
     api.update_status(twat)
@@ -33,14 +33,14 @@ def search():
     followers = str(guser.followers_count)
     guname = str(guser.name)
     descrip = guser.description
-    imgurl1 = guser.profile_image_url
-    y=imgurl1.replace('normal', '400x400')
+    imgurl1 = guser.profile_image_url #this gets the thumbnail photo
+    y=imgurl1.replace('normal', '400x400') # this replaces the url to get the full photo
     twitterURL= "https://twitter.com/"
     newURL = twitterURL + (twat)
     loc = str(guser.location)
     # followww = guser.following
     actdate = guser.created_at
-    joind = actdate.strftime('%B, %Y')
+    joind = actdate.strftime('%B, %Y')# this changes the date format
     return render_template("search.html", fol_count= followers, user_name= guname, urlIMG=y, urlPRO=newURL, location=loc, joined=joind)
 if __name__ == "__main__":
 
