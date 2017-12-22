@@ -2,13 +2,12 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 import tweepy
 
-consumer_key = "JQjgBxhCbB1t4mdQr8Xkxxra6"
-consumer_secret = "CGzfFjVyqT4FXwVsYIUlmocFdSBydKexDZ8m3shGewJBK9fIBf"
-access_token = "61405344-c5PlnzQXr5CDGTxGo8iDDgtyTjlbfRdX165XssPDn"
-token_secret = "axnj3hkFyn9M5WPSQ1GyTrgyUFjXrmjO4kxrfE3nJAWpe"
-# session = dict()
+consumer_key = "" #enter consumer key
+consumer_secret = "" #enter consumer secret
+access_token = "" #enter access token
+token_secret = "" #enter access token secret
 
-# callback="http://localhost:5000/callback"
+
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, token_secret)
